@@ -1,0 +1,19 @@
+.limitation {
+  max-width: 600px;
+  margin: 30px auto 0;
+}
+.right {
+  position: relative;
+  height: 40px;
+}
+.rightChildren {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.color {
+  color: black;
+}
+.validator {
+  color: red;
+}

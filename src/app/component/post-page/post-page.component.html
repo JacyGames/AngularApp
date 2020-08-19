@@ -1,1 +1,28 @@
-<p>post-page works!</p>
+<div class="container marik">
+  <div *ngIf="post$ | async as post">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">{{post.name}} </a>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+
+        </ul>
+        <span class="navbar-text">
+      {{post.date | date:'medium'}}
+    </span>
+      </div>
+    </nav>
+    <div class="content">
+      <quill-view-html [content]="post.content"></quill-view-html>
+    </div>
+    <div class="navigation">
+      <button routerLink="/">Go to all posts</button>
+      <div>{{post.author}}</div>
+    </div>
+  </div>
+
+
+  <ng-template #loader>
+    Loading....
+  </ng-template>
+</div>

@@ -1,11 +1,16 @@
 <div class="card margined">
   <div class="card-header">
-   Date
+    {{post.date | date:'medium'}}
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-      <p>Post title</p>
-      <footer class="footer"><button [routerLink]="['post', 123]" class="btn btn-dark widthRight">Open</button> <cite title="Source Title">Author</cite></footer>
+      <p>{{post.name}}</p>
+      <footer class="footer">
+        <button [routerLink]="['post', post.id]" class="btn btn-dark widthRight">Open</button>
+        <cite title="Source Title">
+          Post author: <strong>{{post.author}}</strong>
+        </cite>
+      </footer>
     </blockquote>
   </div>
 </div>

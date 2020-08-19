@@ -1,1 +1,41 @@
-<p>create-page works!</p>
+<div class="limitation">
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="boss">
+    <h1>Create new post</h1>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name of post</label>
+      <input class="form-control color"
+             [class.is-invalid]="form.get('name').invalid && form.get('name').touched"
+             id="exampleInputEmail1" placeholder="Enter name" formControlName="name">
+      <div class="validator" *ngIf="form.get('name').invalid && form.get('name').touched">
+        <small class="form-text">This field is required</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="content">Content of post</label>
+      <quill-editor id="content" formControlName="content"></quill-editor>
+      <div class="validator" *ngIf="form.get('content').invalid && form.get('content').touched">
+        <small class="form-text">This field is required</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="author">Author of post</label>
+      <input class="form-control color"
+             [class.is-invalid]="form.get('author').invalid && form.get('author').touched"
+             type="text" id="author" placeholder="author" formControlName="author">
+      <div class="validator" *ngIf="form.get('author').invalid && form.get('author').touched">
+        <small class="form-text">This field is required</small>
+      </div>
+    </div>
+   <div class="right">
+     <button [disabled]="form.invalid" type="submit" [class.btn-outline-success]="form.valid"
+             [class.btn-outline-danger]="form.invalid"
+             class="btn rightChildren">Submit</button>
+   </div>
+
+  </form>
+</div>
+

@@ -1,5 +1,13 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" routerLink="">Angular blog</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <a class="navbar-brand" routerLink="/">Angular Blog</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-secondary marginal" type="button" routerLink="/admin">Log in</button>
+    </form>
+  </div>
 </nav>
 <div class="container">
   <router-outlet></router-outlet>

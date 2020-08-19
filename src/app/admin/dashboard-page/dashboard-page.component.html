@@ -1,1 +1,37 @@
-<p>dashboard-page works!</p>
+<div class="container margin" *ngIf="posts; else loader">
+  <form>
+    <div class="form-group">
+    <input type="text" name="first"
+           class="input-group" placeholder="Find post by title" [(ngModel)]="search">
+
+    </div>
+  </form>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Date</th>
+      <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of posts | searchPipe:search; let idx = index">
+      <th scope="row">{{idx + 1}}</th>
+      <td>{{post.name}}</td>
+      <td>{{post.author}}</td>
+      <td>{{post.date | date: 'full'}}</td>
+      <td>
+        <button class="btn btn-primary marginb" [routerLink]="['/admin','post', post.id, 'edit']">Open</button>
+        <button class="btn btn-danger" (click)="deletePost(post.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #loader>
+  <div class="container margin">
+    Loading...
+  </div>
+</ng-template>

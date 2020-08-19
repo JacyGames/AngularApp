@@ -1,6 +1,13 @@
-<h1>This is a home page</h1>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
+<div class="container">
+  <div *ngIf="posts$ | async as posters; else loader">
+    <h1>This is a home page</h1>
+    <div *ngFor="let post of posters">
+      <app-post [post]="post"></app-post>
+    </div>
+
+  </div>
+  <ng-template #loader>
+    Loading...
+  </ng-template>
+</div>
+

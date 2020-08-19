@@ -1,1 +1,49 @@
-<p>login-page works!</p>
+<div class="card modify">
+  <div class="card-body">
+
+
+    <form class="forForm" [formGroup]="form" (ngSubmit)="submit()">
+      <h1 class="title">Log in admin page</h1>
+      <div class="alert alert-info" *ngIf="message">
+        {{message}}
+      </div>
+      <div class="alert alert-danger" *ngIf="auth.errorObs$ | async as error">
+        {{error}}
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input formControlName="email" type="email"
+               [class.is-invalid]="form.get('email').touched && form.get('email').invalid"
+               class="form-control" id="exampleInputEmail1"
+               placeholder="@email"
+        >
+
+        <div class="validation" *ngIf="form.get('email').touched && form.get('email').invalid">
+          <small *ngIf="form.get('email').errors.required" class="form-text">Email is required</small>
+          <small *ngIf="form.get('email').errors.email" class="form-text">Email is invalid</small>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input formControlName="password" type="password" class="form-control"
+               [class.is-invalid]="form.get('password').touched && form.get('password').invalid"
+               id="exampleInputPassword1"
+               placeholder="password"
+        >
+
+        <div class="validation" *ngIf="form.get('password').touched && form.get('password').invalid">
+          <small *ngIf="form.get('password').errors.required" class="form-text">Password is required</small>
+          <small *ngIf="form.get('password').errors.minlength" class="form-text">Length of password must be:
+            {{form.get('password').errors.minlength.requiredLength}}.
+            Current length: {{form.get('password').errors.minlength.actualLength}}</small>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+
+</div>
+
+
