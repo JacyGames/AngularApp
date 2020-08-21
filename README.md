@@ -1,28 +1,22 @@
-# AngProject
+# Angular blog
+This is full-fledged project on Angular, based on firebase.
+## You can create, edit and delete posts of any difficulty.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+# Please, be polite with login and password of admin!
+Don't add bad pics and words.
 
-## Development server
+## For testing app
+You can test app on [AngProject](https://baseforapp.firebaseapp.com/).
+## For admin access:
+Login: admin@gamil.com
+Password: adminadmin
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# AngularApp
+## Some words about app
+1. Home page shows all of the posts, that exist in database. 
+2. Every post have date of his adding.
+3. You can go to exact post, and looks content of it.
+4. There is a system of loginization.
+5. In admin page, you can create, remove or edit any post.
+6. This app avialible in smart-phone.
+7. There are some alerts. They indicate response of your action.
+8. Routes are guarded for unauthorized user. 
