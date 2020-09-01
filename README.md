@@ -8,7 +8,7 @@ Don't add bad pics and words.
 ## For testing app
 You can test app on [AngProject](https://baseforapp.firebaseapp.com/).
 ## For admin access:
-Login: admin@gamil.com
+Login: admin@aka.com
 Password: adminadmin
 
 ## Some words about app
